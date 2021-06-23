@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Pendulum</title>
+    <style>
+        .sidebar {
+            background: #fafafa;
+            float: left;
+            font-family: Helvetica, Arial, sans-serif;
+            min-width: 200px;
+            height: 100%;
+            margin: 0;
+            padding: 10px 5px;
+        }
+
+        .sidebar label {
+            margin: 10px 0 5px 10px;
+            display: block;
+        }
+
+        .sidebar input {
+            margin: 10px 0 5px 10px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .phys-canvas {
+            float: left;
+            border: 1px solid black;
+        }
+
+        .submit-btn {
+            width: 80%;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <form id="set_variables_form">
+            <label>
+                Mass 1: <b id="mass1Display">10</b> kg
+                <input id="mass1" max="50" min="1" type="range" value="10">
+            </label>
+            <label>
+                Mass 2: <b id="mass2Display">10</b> kg
+                <input id="mass2" max="50" min="1" type="range" value="10">
+            </label>
+            <label>
+                &phi;<sub>1</sub> (in deg): <b id="phi1Display">50</b> &deg;
+                <input id="phi1" max="90" min="0" type="range" value="50">
+            </label>
+            <label>
+                &phi;<sub>2</sub> (in deg): <b id="phi2Display">65</b> &deg;
+                <input id="phi2" max="90" min="0" type="range" value="65">
+            </label>
+            <input class="submit-btn" type="submit" value="Start Simulation">
+        </form>
+    </div>
+    <canvas class="phys-canvas" height="600" id="myCanvas" width="700"></canvas>
+    <canvas class="phys-canvas" height="600" id="graph" width="700"></canvas>
+    <script src="./pendulum.js"></script>
+</body>
+
+</html>
